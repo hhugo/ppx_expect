@@ -47,8 +47,8 @@ jobs:
           dune-cache: ${{ matrix.os == 'ubuntu-latest' }}
           opam-depext-flags: --with-test
 
-      - run: opam install . --with-test
       - run: opam pin add sexplib0 --dev
       - run: opam install js_of_ocaml-compiler
+      - run: opam install . --deps-only
       - run: opam exec -- dune runtest test/
       - run: opam exec -- git diff --exit-code
