@@ -1,4 +1,6 @@
 (library (name ppx_expect_test) (flags :standard -principal)
  (libraries expect_test_collector expect_test_matcher)
  (inline_tests (modes native js))
+ (js_of_ocaml (javascript_files stubs.js))
+ (c_names stubs)
  (preprocess (pps ppx_assert ppx_expect)))
