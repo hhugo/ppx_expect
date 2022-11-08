@@ -49,5 +49,6 @@ jobs:
 
       - run: opam install . --with-test
       - run: opam pin add sexplib0 --dev
+      - run: opam install js_of_ocaml-compiler
       - run: opam exec -- dune runtest test/
       - run: opam exec -- git diff --exit-code
