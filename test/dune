@@ -1,3 +1,4 @@
 (library (name ppx_expect_test) (flags :standard -principal)
  (libraries expect_test_collector expect_test_matcher)
+ (inline_tests)
  (preprocess (pps ppx_assert ppx_expect)))

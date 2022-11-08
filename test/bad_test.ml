@@ -38,7 +38,7 @@ let%expect_test (_ [@tags "no-js"]) =
          This is strongly discouraged as backtraces are fragile.
          Please change this test to not include a backtrace. *)
 
-      Raised by primitive operation at Ppx_expect_test__Bad_test.get_a_trace.loop in file "bad_test.ml", line 12, characters 17-29
+      Raised by primitive operation at Ppx_expect_test__Bad_test.get_a_trace.loop in file "test/bad_test.ml", line 12, characters 17-29
     |}]
 ;;
 
