@@ -10,5 +10,6 @@
 CAMLprim value print_err (value v) {
   CAMLparam0 ();   /* v is ignored */
   fprintf(stderr, "This is the error");
+  fflush(stderr);
   CAMLreturn (Val_unit);
 }
