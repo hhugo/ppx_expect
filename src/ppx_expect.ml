@@ -56,12 +56,13 @@ module Expr = struct
     if !strict_indent
     then
       [%expr
-        Ppx_expect_runtime.Expect_node_formatting.Flexibility.Exactly_formatted [@alert
-                                                                                  "-ppx_expect_runtime"]]
+        Ppx_expect_runtime.Expect_node_formatting.Flexibility.Exactly_formatted
+        [@alert "-ppx_expect_runtime"]]
     else
       [%expr
         Ppx_expect_runtime.Expect_node_formatting.Flexibility.Flexible_modulo
-          Ppx_expect_runtime.Expect_node_formatting.default [@alert "-ppx_expect_runtime"]]
+          Ppx_expect_runtime.Expect_node_formatting.default
+        [@alert "-ppx_expect_runtime"]]
   ;;
 end
 
@@ -93,12 +94,12 @@ module Expectation_node = struct
         Ppx_expect_runtime.Test_node.Create.expect_exact [@alert "-ppx_expect_runtime"]]
     | Expect_if_reached _ ->
       [%expr
-        Ppx_expect_runtime.Test_node.Create.expect_if_reached [@alert
-                                                                "-ppx_expect_runtime"]]
+        Ppx_expect_runtime.Test_node.Create.expect_if_reached
+        [@alert "-ppx_expect_runtime"]]
     | Expect_unreachable _ ->
       [%expr
-        Ppx_expect_runtime.Test_node.Create.expect_unreachable [@alert
-                                                                 "-ppx_expect_runtime"]]
+        Ppx_expect_runtime.Test_node.Create.expect_unreachable
+        [@alert "-ppx_expect_runtime"]]
   ;;
 
   let to_expr ~loc t =
@@ -294,6 +295,7 @@ let let_expect_pat =
        (Attribute.pattern
           uncaught_exn
           (value_binding
+             ~constraint_:none
              ~pat:
                (map
                   (Attribute.pattern Ppx_inline_test.tags opt_name)
